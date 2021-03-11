@@ -17,7 +17,7 @@ class TaskController extends Controller
     {   
         $tasks = Task::where('usermail', Auth::user()->email)->paginate();
 
-        return view('task_view', compact('tasks'));
+        return view('task.view', compact('tasks'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('add_task');
+        return view('task.add');
     }
 
     /**

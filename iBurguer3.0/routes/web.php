@@ -33,11 +33,15 @@ Route::group(['middleware' => 'auth'], function() {
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])
         ->name('profile.update');
     
-    Route::resource('task_view', \App\Http\Controllers\TaskController::class);
+    Route::resource('task',\App\Http\Controllers\TaskController::class);
 
-    Route::view('add_task' , 'add_task')->name('add_task');
+    Route::view('task' , [\App\Http\Controllers\ProfileController::class, 'create'])->name('task.create');
 
-    Route::post('dashboard', [\App\Http\Controllers\TaskController::class, 'store'])->name('save_task');
+    Route::post('task', [\App\Http\Controllers\TaskController::class, 'store'])->name('task.store');
+
+    Route::view('admin', [\App\Http\Controllers\UserController::class, 'index'])->name('show.index');
+
+    Route::view('admin', [\App\Http\Controllers\UserController::class, 'link'])->name('show.link');
 });
 
 require __DIR__.'/auth.php';
