@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.login_bg {
+    background-image: url('../assets/img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
