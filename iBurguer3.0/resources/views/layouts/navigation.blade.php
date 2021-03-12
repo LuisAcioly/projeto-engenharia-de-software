@@ -15,8 +15,6 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-5 sm:flex">
                     {{\App\Http\Controllers\UserController::link()}}
                 </div>
             </div>
@@ -37,9 +35,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                            <x-dropdown-link :href="route('profile')">
-                                {{ __('Meu perfil') }}
-                            </x-dropdown-link>
+                        {{\App\Http\Controllers\UserController::profile_link()}}
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

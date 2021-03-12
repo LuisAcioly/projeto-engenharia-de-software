@@ -38,4 +38,25 @@ class UserController extends Controller
         }
         
    }
+
+   public static function profile_link()
+   {   
+        $user = Auth::user();
+
+        if($user->email != 'iburguer.system@gmail.com'){
+            return view('admin.profile_link');
+        }
+        
+   }
+
+   /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Task  $task
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Task $task)
+    {
+        //
+    }
 }

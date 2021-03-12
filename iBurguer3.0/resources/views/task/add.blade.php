@@ -39,7 +39,7 @@
                                         <div class="flex items-center">
                                         <input id="x-salada" name="burguer" type="radio" value="X-salada" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
                                         <label for="x-salada" class="ml-3 block text-sm font-medium text-gray-700">
-                                            x-Salada
+                                            X-salada
                                         </label>
                                         <p class="text-sm text-gray-500 ml-2"> | Hamburguer 120g, bacon, salada, maionese</p>
                                         </div>

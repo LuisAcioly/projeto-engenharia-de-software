@@ -55,9 +55,11 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show($id)
     {
-        //
+        $task = Task::where('id', $id)->first();
+
+        return view('admin.show_task', compact('task'));
     }
 
     /**
@@ -66,9 +68,14 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
-    {
-        //
+    public function edit(Request $request)
+    {   
+        $task = Task::where('id', $request->id)->first();
+
+        $task->status = $request->status;
+        $task->save();
+
+        return redirect()->route('show.task', $task->id)->with('message', 'Pedido atualizado');
     }
 
     /**
