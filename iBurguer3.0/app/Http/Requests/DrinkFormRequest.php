@@ -3,11 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
-use Auth;
 
-class UpdateProfileRequest extends FormRequest
+class DrinkFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,14 +23,14 @@ class UpdateProfileRequest extends FormRequest
      */
     public function rules()
     {
-        $id = Auth::user()->id;
         return [
-            'name' => 'required',
-            'email' => [
-                'required',
-                Rule::unique('users')->ignore($id),
-            ],
-            'password' => 'min:6|confirmed',
+            'name' => 'required|unique:drink'
+        ];
+    }
+
+    public function messages(){
+        return [
+            'name.unique' => 'O banco de dados já possui uma bebida com esse nome cadastrado'
         ];
     }
 }

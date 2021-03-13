@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Http\Controllers\BurguerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,24 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::post('task', [\App\Http\Controllers\TaskController::class, 'edit'])->name('edit.task');
 
+    Route::get('/menu', [BurguerController::class, 'index'])->name('menu');
+
+    Route::get('/menu/register', [BurguerController::class, 'create'])->name('burguer.add');
+
+    Route::post('menu/store', [\App\Http\Controllers\BurguerController::class, 'store'])->name('burguer.store');
+
+    Route::get('menu/{id}', [\App\Http\Controllers\BurguerController::class, 'show'])->name('burguer.show');
+
+    Route::post('menu/edit', [\App\Http\Controllers\BurguerController::class, 'edit'])->name('burguer.edit');
+
+    Route::get('delete/{id}', [\App\Http\Controllers\BurguerController::class, 'delete'])->name('burguer.delete');
+
+    Route::get('drink', [\App\Http\Controllers\DrinkController::class, 'show'])->name('drink.show');
+
+    Route::post('drink/store', [\App\Http\Controllers\DrinkController::class, 'store'])->name('drink.store');
+
+    Route::get('drink/{id}', [\App\Http\Controllers\DrinkController::class, 'delete'])->name('drink.delete');
+
 });
 
 require __DIR__.'/auth.php';
@@ -54,5 +73,7 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 
 

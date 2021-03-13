@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Requests;
+use Illuminate\Validation\Rule;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
-use Auth;
 
-class UpdateProfileRequest extends FormRequest
+class BurguerFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,15 +23,18 @@ class UpdateProfileRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
-        $id = Auth::user()->id;
+{
+    return [
+	    'name' => [
+		    'required',
+		    Rule::unique('burguer', 'name')->ignore($this->burguer)
+	    ]
+    ]; 
+}
+
+    public function messages(){
         return [
-            'name' => 'required',
-            'email' => [
-                'required',
-                Rule::unique('users')->ignore($id),
-            ],
-            'password' => 'min:6|confirmed',
+            'name.unique' => 'O banco de dados já possui um hamburguer com esse nome cadastrado'
         ];
     }
 }

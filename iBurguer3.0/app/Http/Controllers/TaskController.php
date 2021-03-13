@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\Burguer;
+use App\Models\Drink;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -26,8 +28,12 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('task.add');
+    {   
+        $burguers = Burguer::paginate();
+
+        $drinks = Drink::paginate();
+
+        return view('task.add', compact('burguers'), compact('drinks'));
     }
 
     /**

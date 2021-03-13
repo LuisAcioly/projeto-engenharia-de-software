@@ -22,27 +22,15 @@
                                         <legend class="text-base font-medium text-gray-900">Hamburguer</legend>
                                     </div>
                                     <div class="mt-4 space-y-4">
-                                        <div class="flex items-center">
-                                        <input id="x-tudo" name="burguer" type="radio" value="X-tudo" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
-                                        <label for="x-tudo" class="ml-3 block text-sm font-medium text-gray-700">
-                                            X-tudo
-                                        </label>
-                                        <p class="text-sm text-gray-500 ml-2"> | Hamburguer 120g, bacon, salada, maionese</p>
-                                        </div>
-                                        <div class="flex items-center">
-                                        <input id="x-bacon" name="burguer" type="radio" value="X-bacon" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
-                                        <label for="x-bacon" class="ml-3 block text-sm font-medium text-gray-700">
-                                            X-bacon
-                                        </label>
-                                        <p class="text-sm text-gray-500 ml-2"> | Hamburguer 120g, bacon, salada, maionese</p>
-                                        </div>
-                                        <div class="flex items-center">
-                                        <input id="x-salada" name="burguer" type="radio" value="X-salada" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
-                                        <label for="x-salada" class="ml-3 block text-sm font-medium text-gray-700">
-                                            X-salada
-                                        </label>
-                                        <p class="text-sm text-gray-500 ml-2"> | Hamburguer 120g, bacon, salada, maionese</p>
-                                        </div>
+                                        @foreach($burguers as $burguer)
+                                            <div class="flex items-center">
+                                                <input id="{{$burguer->name}}" name="burguer" type="radio" value="{{$burguer->name}}" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
+                                                <label for="{{$burguer->name}}" class="ml-3 block text-sm font-medium text-gray-700">
+                                                    {{$burguer->name}}
+                                                </label>
+                                                <p class="text-sm text-gray-500 ml-2"> | {{$burguer->blend}}, {{$burguer->additional}}, {{$burguer->salad}}, {{$burguer->sauce}}</p>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </fieldset>
                                 <fieldset>
@@ -50,24 +38,14 @@
                                         <legend class="text-base font-medium text-gray-900">Bebida</legend>
                                     </div>
                                     <div class="mt-4 space-y-4">
-                                        <div class="flex items-center">
-                                        <input id="coca" name="drink" type="radio" value="Coca-cola" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
-                                        <label for="coca" class="ml-3 block text-sm font-medium text-gray-700">
-                                            Coca-cola
-                                        </label>
-                                        </div>
-                                        <div class="flex items-center">
-                                        <input id="agua" name="drink" type="radio" value="Água" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
-                                        <label for="agua" class="ml-3 block text-sm font-medium text-gray-700">
-                                            Água
-                                        </label>
-                                        </div>
-                                        <div class="flex items-center">
-                                        <input id="guarana" name="drink" type="radio" value="Guaraná" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
-                                        <label for="guarana" class="ml-3 block text-sm font-medium text-gray-700">
-                                            Guaraná
-                                        </label>
-                                        </div>
+                                        @foreach($drinks as $drink)
+                                            <div class="flex items-center">
+                                                <input id="{{$drink->name}}" name="drink" type="radio" value="{{$drink->name}}" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
+                                                <label for="{{$drink->name}}" class="ml-3 block text-sm font-medium text-gray-700">
+                                                    {{$drink->name}}
+                                                </label>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </fieldset>
                             </div>
