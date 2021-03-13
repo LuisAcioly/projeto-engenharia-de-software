@@ -24,25 +24,25 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                 
-                @foreach ($tasks as $task)
+                    @foreach ($tasks as $task)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
-                            <div class="ml-4">
-                                <div class="text-sm text-gray-500">
-                                {{ $task->burguer }}
+                                <div class="ml-4">
+                                    <div class="text-sm text-gray-500">
+                                        {{ $task->burguer }}
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-900">
-                            {{ $task->drink }}
+                                {{ $task->drink }}
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            {{ $task->status }}
+                                {{ $task->status }}
                             </span>
                         </td>
                     </tr>

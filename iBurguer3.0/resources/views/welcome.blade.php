@@ -8,7 +8,6 @@
 
         <link rel="stylesheet" href="{{url('css/home_style.css')}}">
 
-        
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0">
@@ -42,6 +41,7 @@
                         <div class="img">
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </body>
