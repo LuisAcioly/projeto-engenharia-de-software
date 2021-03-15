@@ -17,7 +17,7 @@ hamburgueres pelo celular ou browser de computador.
 ## Principais funções:
 
 - Cadastrar cliente
-- Solicitar pedido
+- Realizar pedido
 - Cadastar hamburguer
 - Alterar hamburguer
 - Excluir hamburguer
@@ -27,11 +27,12 @@ hamburgueres pelo celular ou browser de computador.
 - Visualiar perfil
 - Alterar perfil
 - Visualizar pedidos
-- Cancelar pedido 
+- Cadastrar Bebida
+- Excluir bebida 
 
 ## Tecnologias utilizadas:
 
-HTML5, CSS3, PHP 7, Javascript e Adobe Photoshop CC 2019
+HTML5, CSS3, PHP 7, Laravel e Adobe Photoshop CC 2019
 
 
 
