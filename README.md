@@ -5,7 +5,7 @@ hamburgueres pelo celular ou browser de computador.
 
 ## Usuarios:
 
-- Cliente
+- TesteCliente
 - Admin
 
 ## Entidades:
